@@ -13,13 +13,21 @@ const GET_TRANSACTION_GRID_FIELDS = 'GET_TRANSACTION_GRID_FIELDS';
 const REQUEST_SUM = 'REQUEST_SUM';
 
 class Budjet extends Component {
-
+constructor(props){
+    super(props);
+    this.state = {
+        user: {}
+    }
+}
 
   componentWillMount() {
     const { transactions, actions } = this.props;
     actions.requestSum(transactions);
+
+
     console.log("BUDGET JS");
     console.log(this.props);
+
   }
 
   render() {
@@ -52,6 +60,18 @@ class Budjet extends Component {
             </div>
           </div>
 
+        <h3>Currency</h3>
+        <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9cW4XdqQpjJejvmWX0LPuDjwkOhd36k4ePObnf1fsmcuyQkiyQ" alt="" class="circle responsive-img"/> 
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                <h5>Credits: {summary.value ? summary.value  : 0}</h5>
+              </span>
+            </div>
+          </div>
+
 
         </div>
         </div>
@@ -76,12 +96,13 @@ class Budjet extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, {auth}) {
   const { transactions } = state;
   return {
     transactions: transactions.transactions,
     summary: transactions.summary,
-    gridFields: transactions.transactionsGrid
+    gridFields: transactions.transactionsGrid,
+    auth: this.auth
   };
 }
 
