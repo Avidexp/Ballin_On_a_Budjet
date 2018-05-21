@@ -1,8 +1,8 @@
 export const defaultTransactions = [
   {
     id: 1,
-    description: 'Test Charge',
-    value: 150.00
+    description: 'Initial Balance',
+    value: 2123.00
   }
 ];
 export const defaultTransactionGridFields = [
