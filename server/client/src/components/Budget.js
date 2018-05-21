@@ -18,6 +18,8 @@ class Budjet extends Component {
   componentWillMount() {
     const { transactions, actions } = this.props;
     actions.requestSum(transactions);
+    console.log("BUDGET JS");
+    console.log(this.props);
   }
 
   render() {
@@ -29,13 +31,35 @@ class Budjet extends Component {
     } = this.props;
 
     return (
-      <div className="container">
-
+        <div>
+            <div class="row">
+            <div class="col s6">
+            <div class="card">
+            <div class="card-content">
+        <h3>Banks</h3>
+        {/* <Grid fields={gridFields} data={transactions}>
+        <TransactionForm action={actions.addTransaction}/>
+        <TransactionSummary data={summary} fields={gridFields} />
+        </Grid>  */}
+        </div>
+        </div>
+        </div>
+                            
+        <div class="col s6">
+        <div class="card">
+        <div class="card-content">
         <Grid fields={gridFields} data={transactions}>
           <TransactionForm action={actions.addTransaction}/>
           <TransactionSummary data={summary} fields={gridFields} />
         </Grid>
-      </div>
+        </div>
+        </div>
+        </div>
+
+
+        </div>
+        </div>
+
     );
   }
 }

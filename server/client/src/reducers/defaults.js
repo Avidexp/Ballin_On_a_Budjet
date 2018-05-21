@@ -1,18 +1,8 @@
 export const defaultTransactions = [
   {
     id: 1,
-    description: 'Trader Joe\'s food',
-    value: -123.34
-  },
-  {
-    id: 2,
-    description: 'Gas',
-    value: -64.73
-  },
-  {
-    id: 3,
-    description: 'Ebay sale - guitar',
-    value: 102.00
+    description: 'Test Charge',
+    value: 150.00
   }
 ];
 export const defaultTransactionGridFields = [
