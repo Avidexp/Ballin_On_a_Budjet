@@ -11,6 +11,7 @@ import Landing from './Landing';
 import BuyCredits from './BuyCredits';
 import Login from './login';
 import Signup from './Signup';
+import Budget from './Budget';
 const SurveyNew = () =>  <h2>New Survey</h2>;
 
 
@@ -29,6 +30,7 @@ class App extends Component {
                         <Route exact path="/dashboard" component={Dashboard}/>
                         <Route exact path="/login" component={Login}/>
                         <Route exact path="/signup" component={Signup}/>
+                        <Route exact path="/budget" component={Budget}/>
                         <Route exact path="/newSurvey" component={SurveyNew}/>
                         <Route exact path="/BuyCredits" component={BuyCredits}/>
                     </div>
